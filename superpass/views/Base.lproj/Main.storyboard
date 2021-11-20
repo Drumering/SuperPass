@@ -63,15 +63,15 @@
                                 <color key="textColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0q-dY-utF">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A0q-dY-utF">
                                 <rect key="frame" x="317" y="251.66666666666663" width="51" height="31"/>
                                 <color key="onTintColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2lV-uO-jKD">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2lV-uO-jKD">
                                 <rect key="frame" x="317" y="297.66666666666669" width="51" height="31"/>
                                 <color key="onTintColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dia-MC-7js">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dia-MC-7js">
                                 <rect key="frame" x="317" y="343.66666666666669" width="51" height="31"/>
                                 <color key="onTintColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
@@ -145,6 +145,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="FBd-oe-2au"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnGeraSenha" destination="z1G-0Z-vhc" id="N3V-87-icj"/>
                         <outlet property="swCaptitalLetters" destination="dia-MC-7js" id="3bd-hM-kIY"/>
                         <outlet property="swLetters" destination="A0q-dY-utF" id="wNv-TV-wfH"/>
                         <outlet property="swNumbers" destination="2lV-uO-jKD" id="MB6-mq-VRC"/>

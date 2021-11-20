@@ -15,10 +15,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var swNumbers: UISwitch!
     @IBOutlet weak var swSpecialCharacters: UISwitch!
     @IBOutlet weak var swCaptitalLetters: UISwitch!
-
+    @IBOutlet weak var btnGeraSenha: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        verifySwitches()
+    }
+    
+    func verifySwitches() {
+        if !swNumbers.isOn, !swLetters.isOn, !swCaptitalLetters.isOn, !swSpecialCharacters.isOn {
+            print("all disabled")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
