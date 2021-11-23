@@ -19,13 +19,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSwitches()
+    }
+    
+    func setupSwitches() {
         // Do any additional setup after loading the view.
+        
+        swLetters.addTarget(self, action: #selector(onSwitchValueChanged), for: .valueChanged)
+        
+        swNumbers.addTarget(self, action: #selector(onSwitchValueChanged), for: .valueChanged)
+        
+        swSpecialCharacters.addTarget(self, action: #selector(onSwitchValueChanged), for: .valueChanged)
+        
+        swCaptitalLetters.addTarget(self, action: #selector(onSwitchValueChanged), for: .valueChanged)
+    }
+    
+    @objc func onSwitchValueChanged(_ switch: UISwitch) {
         verifySwitches()
     }
     
     func verifySwitches() {
         if !swNumbers.isOn, !swLetters.isOn, !swCaptitalLetters.isOn, !swSpecialCharacters.isOn {
-            print("all disabled")
+            btnGeraSenha.isHidden = true
+        } else {
+            btnGeraSenha.isHidden = false
         }
     }
     
