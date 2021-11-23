@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     @objc func onEditNumberOfCharacters(_ textField: UITextField) {
-        if (textField.text?.isEmpty ?? true) || (textField.text?.count ?? 1) > 16 {
+        if (textField.text?.isEmpty ?? true) || (Int(textField.text ?? "1") ?? 0) > 16 {
             alertHandler(with: "Please, insert a value between 1 and 16.")
         }
     }
