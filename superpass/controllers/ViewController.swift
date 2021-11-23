@@ -20,6 +20,45 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSwitches()
+        setupNumberOfCharacters()
+        setupTotalPasswords()
+        setupBtnGerarSenha()
+    }
+    
+    func alertHandler(with message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func setupBtnGerarSenha() {
+        btnGeraSenha.addTarget(self, action: #selector(onClickBtnGerarSenha), for: .touchUpInside)
+    }
+    
+    @objc func onClickBtnGerarSenha(_ button: UIButton) {
+        if (tfTotalPasswords.text?.isEmpty ?? true) || (tfNumberOfCharacters.text?.isEmpty ?? true) {
+            alertHandler(with: "Please, some fields were left empty, the default values were used")
+        }
+    }
+    
+    func setupNumberOfCharacters() {
+        tfNumberOfCharacters.addTarget(self, action: #selector(onEditNumberOfCharacters), for: .editingDidEnd)
+    }
+    
+    @objc func onEditNumberOfCharacters(_ textField: UITextField) {
+        if (textField.text?.isEmpty ?? true) || (textField.text?.count ?? 1) > 16 {
+            alertHandler(with: "Please, insert a value between 1 and 16.")
+        }
+    }
+    
+    func setupTotalPasswords() {
+        tfTotalPasswords.addTarget(self, action: #selector(onEditTotalPassWords), for: .editingDidEnd)
+    }
+    
+    @objc func onEditTotalPassWords(_ textField: UITextField){
+        if (Int(textField.text!) ?? 1) <= 0 || (Int(textField.text!) ?? 1) > 99 {
+            alertHandler(with: "Please, insert a value between 1 and 99. ")
+        }
     }
     
     func setupSwitches() {
@@ -41,6 +80,7 @@ class ViewController: UIViewController {
     func verifySwitches() {
         if !swNumbers.isOn, !swLetters.isOn, !swCaptitalLetters.isOn, !swSpecialCharacters.isOn {
             btnGeraSenha.isHidden = true
+            alertHandler(with: "Please, select an option to generate the password")
         } else {
             btnGeraSenha.isHidden = false
         }
